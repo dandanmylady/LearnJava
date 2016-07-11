@@ -21,3 +21,8 @@ public class MyArray {
         }
     }
 }
+
+class TestFriend {
+    int iFirend = 88;
+    public int iPublic = 99;
+}

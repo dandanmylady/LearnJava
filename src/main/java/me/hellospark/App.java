@@ -8,6 +8,8 @@ package me.hellospark;
 
 class Rock
 {
+    int iFriend = 5233;
+    private int iPrivate = 8888;
     Rock(int i){
         System.out.println("Creating Rock " + i);
     }
@@ -29,12 +31,22 @@ public class App
                 + "the third argument is "
                 + args[2]);
 
-            for(int i = 1; i < 10; i++)
-            {
-                new Rock(i);
-            }
         }catch (Exception e){}
+
+
+        for(int i = 1; i < 10; i++)
+        {
+            Rock r = new Rock(i);
+            System.out.println(r.iFriend);
+        }
+
+
         MyArray.testArray();
+
+
+        TestFriend tf = new TestFriend();
+        System.out.println(tf.iFirend);
+        System.out.println(tf.iPublic);
     }
 }
 
