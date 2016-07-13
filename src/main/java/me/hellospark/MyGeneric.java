@@ -1,6 +1,7 @@
 package me.hellospark;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -71,6 +72,10 @@ public class MyGeneric {
         //list.add(new T());
     }
 
+    public static <T> void fill(T[] array, T elem) {
+        for(int i = 0; i < array.length; i++)
+            array[i] = elem;
+    }
     public static void main(String[] args){
         List<GenericBase> list = new ArrayList<GenericBase>();
         list.add(new GenericBase());
@@ -90,5 +95,16 @@ public class MyGeneric {
         printListGeneric(subList);
         printListWideCase(subList);
         printListExtendsGenericBase(subList);
+
+        fill(new String[5], "hi");
+        //fill(new String[5], 100);
+        // Won't compile:
+        //Class<String> cs = "abc".getClass();
+        String s = "nihao";
+        System.out.println(s.getClass());
+
+        Object obj = new LinkedList<Long>();
+        // Won't compile:
+        // System.out.println(obj instanceof List<Long>);
     }
 }
